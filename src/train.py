@@ -1,6 +1,7 @@
 import numpy as np
 from preprocess import get_datasets
 from models.basic_model import BasicModel
+from models.hyper_model import HyperModel
 from models.model import Model
 from config import image_size, train_directory, batch_size
 import matplotlib.pyplot as plt
@@ -13,6 +14,7 @@ categories_count = 3
 
 models = {
     'basic_model': BasicModel,
+    'hyper_model': HyperModel,
 }
 
 def plot_history(history):
@@ -80,7 +82,7 @@ if __name__ == "__main__":
         class_mode='categorical'
     )
     
-    name = 'basic_model'
+    name = 'hyper_model'
     model_class = models[name]
     print('* Training {} for {} epochs'.format(name, epochs))
     model = model_class(input_shape, categories_count)

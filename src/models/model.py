@@ -33,7 +33,7 @@ class Model:
         return LoadedModel(filename)
     
     def evaluate(self, test_dataset):
-        self.model.evaluate(
+        return self.model.evaluate(
             x=test_dataset,
             verbose='auto',
         )
